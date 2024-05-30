@@ -5,7 +5,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -g
 
 # Nome do executável
-TARGET = main
+TARGET = tp2
 
 # Diretório de saída para os arquivos objeto
 OBJDIR = obj
