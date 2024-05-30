@@ -56,9 +56,11 @@ int main(int argNum, char *args[]){
 
     tempo_execucao = (end_time.tv_sec - start_time.tv_sec) + (end_time.tv_usec - start_time.tv_usec) / 1000000.0;
 
-    printf("\n%lu\n", S->pontuacao);
-
-    printf("\n-----------------------------------------------\n");
+    FILE *arq_saida = fopen("saida.txt", "w");
+    fprintf(arq_saida, "%lu", S->pontuacao);
+    fclose(arq_saida);
+    
+    printf("-----------------------------------------------\n");
     printf("Tempo de CPU usado (usuário): %f segundos\n", retorna_tempo_usuario(&start, &end));
     printf("Tempo de CPU usado (sistema): %f segundos\n", retorna_tempo_sistema(&start, &end));
     printf("Tempo de execucao: %f segundos\n", tempo_execucao);
