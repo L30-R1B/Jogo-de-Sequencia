@@ -15,7 +15,7 @@ Foram implementadas duas estratégias para solucionar o problema:
 A estratégia dinâmica foi desenvolvida com o intuito de eliminar uma possivel força bruta, tornado o problema linear.
 
 ### Estratégia 2: Alternativa (A)
-A estratégia alternativa foi baseada backtracking.
+A estratégia alternativa foi baseada em backtracking.
 
 ### Estratégia 3 (Bonus): Alternativa (B)
 A solução bonus envolve a construção de um vetor para armazenar os resultados dos subproblemas, evitando recalcular os resultados de forma redundante.
