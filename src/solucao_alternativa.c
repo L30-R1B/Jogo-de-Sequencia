@@ -2,31 +2,31 @@
 #include <stdlib.h>
 #include <time.h>
 #include "../include/sequencia.h"
-#include "../include/solucao_alternativa.h"
+#include "../include/solucao_bonus.h"
 
-long unsigned max_pontucao_recursiva(Valores vetor[], int indice, int tamanho, long unsigned *memoria) {
-    if (indice >= tamanho)
-        return 0;
+void backtracking(Valores *nums, int tamanho, int index, int last_included, long int current_sum, long int *max_sum) {
+    long int upper_bound = current_sum;
+    for (int i = index; i < tamanho; i++) {
+        upper_bound += nums[i].num;
+    }
+    if (upper_bound <= *max_sum) {
+        return;
+    }
 
-    if (memoria[indice] != 0)
-        return memoria[indice];
+    if (index >= tamanho) {
+        if (current_sum > *max_sum) {
+            *max_sum = current_sum;
+        }
+        return;
+    }
 
-    long unsigned incluir = vetor[indice].num + max_pontucao_recursiva(vetor, indice + 2, tamanho, memoria);
+    backtracking(nums, tamanho, index + 1, last_included, current_sum, max_sum);
 
-    long unsigned excluir = max_pontucao_recursiva(vetor, indice + 1, tamanho, memoria);
-
-    memoria[indice] = max(incluir, excluir);
-
-    return memoria[indice];
+    if (index == 0 || index > last_included + 1) {
+        backtracking(nums, tamanho, index + 1, index, current_sum + nums[index].num, max_sum);
+    }
 }
 
 void solucao_alternativa(Sequencia *S) {
-    long unsigned memo[S->tamanho];
-    for (unsigned i = 0; i < S->tamanho; i++) {
-        memo[i] = 0; 
-    }
-
-    S->pontuacao = max_pontucao_recursiva(S->V, 0, S->tamanho, memo);
-    
-    return;
+    backtracking(S->V, S->tamanho, 0, -1, 0, &S->pontuacao);
 }

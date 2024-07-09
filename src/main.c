@@ -8,6 +8,7 @@
 #include "../include/sequencia.h"
 #include "../include/solucao_dinamica.h"
 #include "../include/solucao_alternativa.h"
+#include "../include/solucao_bonus.h"
 
 float retorna_tempo_usuario(struct rusage *start, struct rusage *end) {
   return (end->ru_utime.tv_sec - start->ru_utime.tv_sec) + 1e-6 * (end->ru_utime.tv_usec - start->ru_utime.tv_usec);
@@ -20,7 +21,7 @@ int main(int argNum, char *args[]){
     if(argNum != 3){
         printf("NÚMERO DE ARGUMENTOS INVÁLIDOS ! ! !\n");
         return 1;
-    }else if(args[1][0] != 'A' && args[1][0] != 'D'){
+    }else if(args[1][0] != 'A' && args[1][0] != 'D' && args[1][0] != 'B'){
         printf("OPERAÇÂO INVÁLIDA ! ! !\n");
         return 1;
     }
@@ -50,6 +51,8 @@ int main(int argNum, char *args[]){
         solucao_alternativa(S);
     else if(!strcmp(args[1], "D"))
         solucao_dinamica(S);
+    else 
+        solucao_bonus(S);
 
     gettimeofday(&end_time, NULL);
     getrusage(RUSAGE_SELF, &end);

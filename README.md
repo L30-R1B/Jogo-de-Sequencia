@@ -12,10 +12,13 @@ Foram implementadas duas estratégias para solucionar o problema:
 2. **Estratégia Alternativa (A)**
 
 ### Estratégia 1: Programação Dinâmica (D)
-A solução baseada em programação dinâmica envolve a construção de uma tabela para armazenar os resultados das subproblemas, evitando recalcular os resultados de forma redundante.
+A estratégia dinâmica foi desenvolvida com o intuito de eliminar uma possivel força bruta, tornado o problema linear.
 
 ### Estratégia 2: Alternativa (A)
-A estratégia alternativa foi desenvolvida para garantir a resolução do problema de forma eficiente.
+A estratégia alternativa foi baseada backtracking.
+
+### Estratégia 3 (Bonus): Alternativa (B)
+A solução bonus envolve a construção de um vetor para armazenar os resultados dos subproblemas, evitando recalcular os resultados de forma redundante.
 
 ## Entrada e Saída
 ### Entrada

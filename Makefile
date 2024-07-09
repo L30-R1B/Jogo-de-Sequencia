@@ -11,10 +11,10 @@ TARGET = tp2
 OBJDIR = obj
 
 # Lista de arquivos fonte
-SOURCES = src/main.c src/solucao_alternativa.c src/solucao_dinamica.c src/sequencia.c
+SOURCES = src/main.c src/solucao_dinamica.c src/solucao_alternativa.c src/solucao_bonus.c src/sequencia.c
 
 # Lista de cabeçalhos
-HEADERS = include/solucao_alternativa.h include/solucao_dinamica.h include/sequencia.h
+HEADERS = include/solucao_dinamica.h include/solucao_alternativa.h include/solucao_bonus.h include/sequencia.h
 
 # Gera os nomes dos arquivos objeto
 OBJECTS = $(patsubst src/%.c,$(OBJDIR)/%.o,$(SOURCES))
