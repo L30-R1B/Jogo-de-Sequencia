@@ -3,6 +3,6 @@
 
 #include "../include/sequencia.h"
 
-void solucao_bonus(Sequencia *S);
+void solucao_backtracking(Sequencia *S);
 
 #endif
