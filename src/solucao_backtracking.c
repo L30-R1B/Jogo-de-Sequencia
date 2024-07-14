@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include "../include/sequencia.h"
-#include "../include/solucao_bonus.h"
+#include "../include/solucao_backtracking.h"
 
 void backtracking(Valores *nums, int tamanho, int index, int last_included, long int current_sum, long int *max_sum) {
     long int upper_bound = current_sum;
@@ -27,6 +27,6 @@ void backtracking(Valores *nums, int tamanho, int index, int last_included, long
     }
 }
 
-void solucao_bonus(Sequencia *S) {
+void solucao_backtracking(Sequencia *S) {
     backtracking(S->V, S->tamanho, 0, -1, 0, &S->pontuacao);
 }

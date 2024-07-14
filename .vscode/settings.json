@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "solucao_bonus.h": "c",
+        "resource.h": "c",
+        "solucao_gulosa.h": "c"
+    }
+}

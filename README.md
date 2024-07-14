@@ -17,8 +17,11 @@ A estratégia dinâmica foi desenvolvida com o intuito de eliminar uma possivel 
 ### Estratégia 2: Alternativa (A)
 A estratégia alternativa envolve a construção de um vetor para armazenar os resultados dos subproblemas, evitando recalcular os resultados de forma redundante.
 
-### Estratégia 3 (Bonus): Alternativa (B)
-A solução bonus foi baseada em backtracking. 
+### Estratégia 3 (Bonus) Backtracking:(B)
+A solução bonus foi baseada em backtracking (extremamente ineficiente). 
+
+### Estratégia 4 (Bonus) Algoritmo Guloso:(G)
+A solução bonus foi baseada em heaps, é um algoritmo guloso (bastante eficiente, porém não garante o resultado ideal).
 
 ## Entrada e Saída
 ### Entrada
